@@ -24,23 +24,24 @@ Covered Amazon Service:
 ## Lambda Function
 **src:** /Lambda/
 
-### LF0 
+### LF0 (Node.js)
 + Bridge front-end web and Amazon Lex
 + Use the request/response model (API) specified in the msgAPI-swagger.yaml 
 
-### LF1
+### LF1 (Python)
 + Code hook for Lex, validing input, eliciting slots and fulfiling the intents
 + Two Intents: Greeting Intent and DiningSuggestionIntent
 + Slots: Location, Cuisine, Time, Number Of People, Phone Number, Email Address
 
-### LF2
+### LF2 (Python)
 + Auto-triggered by CloudWatch every n minutes
 + When triggered, pull a message from SQS(Message Queue), search cuisine in the message by ElasticSearch and get up to three random related restaurants IDs 
 , acquire their details by query id field in dynamoDB
 + Send recommendations to customer by SNS text service and SES email service
 
-## Restaurants Data
-**src:** /scrapYelp/ 
+## Restaurants Data 
+**src:** /scrapYelp/       
+**language:** Python
 
 Scrap 8000+ restaurants from Yelp API. Cover 50 US main cities.         
 Store detailed information to dynamoDB, partition key is 'id' 
