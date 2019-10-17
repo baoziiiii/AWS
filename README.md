@@ -133,7 +133,7 @@ AWS Chatbot 10/16/2019, 11:24:23 PM
 You're all set! If I find suggestions, I will notify your phone or your email! Have a good day!
 ```
 
-Suggestion:
+### Suggestion Text:
 ```
 Your Restaurant Suggestions
 Hello! Here are my Chinese restaurant suggestions for 5 people, for 13:00. 
