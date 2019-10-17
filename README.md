@@ -124,7 +124,7 @@ User 10/16/2019, 11:24:18 PM
 example@gmail.com
 
 AWS Chatbot 10/16/2019, 11:24:19 PM
-Okay, please check your information.[Location: New York];[Cuisine: Chinese];[Time: 1:00 p.m.];[Number Of People: 5];[Phone Number: +19172924010];[Email: wb854@nyu.edu]
+Okay, please check your information.[Location: New York];[Cuisine: Chinese];[Time: 1:00 p.m.];[Number Of People: 5];[Phone Number: +1123456789];[Email: example@gmail.com]
 
 User 10/16/2019, 11:24:21 PM
 ok
