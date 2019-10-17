@@ -94,13 +94,16 @@ def build_validation_result(is_valid, violated_slot, message_content):
 
 def validate_book_appointment(appointment_time,phone_number,email):
     if appointment_time:
-        if re.match("[0-9]{2}:[0-9]{2}",appointment_time)==None:
+        if re.match("^[0-9]{2}:[0-9]{2}",appointment_time)==None:
             return build_validation_result(False, 'Time', 'I did not recognize that, what time would you like to book your appointment?')
         
         hour, minute = appointment_time.split(':')
         hour = parse_int(hour)
         minute = parse_int(minute)
+
         if math.isnan(hour) or math.isnan(minute):
+            return build_validation_result(False, 'Time', 'I did not recognize that, what time would you like to book your appointment?')
+        if hour < 0 or hour > 23:
             return build_validation_result(False, 'Time', 'I did not recognize that, what time would you like to book your appointment?')
 
         if minute not in [30, 0]:
@@ -145,6 +148,7 @@ def appointment(intent_request):
     output_session_attributes = intent_request['sessionAttributes'] if intent_request['sessionAttributes'] is not None else {}
     confirmation_status = intent_request['currentIntent']['confirmationStatus']
     
+    
     if source == 'DialogCodeHook':
         # Perform basic validation on the supplied input slots.
         slots = intent_request['currentIntent']['slots']
@@ -186,7 +190,7 @@ def appointment(intent_request):
                 intent_request['currentIntent']['name'],
                 intent_request['currentIntent']['slots'],
                 'Time',
-                {'contentType': 'PlainText', 'content': 'Then what time?'},
+                {'contentType': 'PlainText', 'content': 'Then what time?(format: 11:00 a.m./12:00 p.m.)'},
                 None
             )
     
