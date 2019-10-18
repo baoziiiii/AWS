@@ -4,7 +4,7 @@ import boto3
 import requests
 import json
 
-api_key = 'w94RBe98SR8FXHwM4bFg2qwBxHWwSmxMVBPMZMDl9-tvMlMzyT01ONb7XJuAzqtCxaPz3YIKRpMDCnRz4YxTOlAjUsu3NYur5uQQnAg0PpA2gDJ2cLJprFBH9X2mXXYx'
+api_key = 'copy_your_yelp_api_here'
 headers = {'Authorization': 'Bearer %s' % api_key}
 
 cities = ['New York', 'Seattle', 'Los Angeles', 'Chicago', 'San Francisco', 'Washington', 'Denver', 'Boston',
@@ -13,7 +13,7 @@ cities = ['New York', 'Seattle', 'Los Angeles', 'Chicago', 'San Francisco', 'Was
 url = 'https://api.yelp.com/v3/businesses/search'
 
 ## connect to aws es
-host = 'search-cc-es-zomuhpncq75enpb6mjilbyjqce.us-east-1.es.amazonaws.com'
+host = 'copy_your_es_here'
 region = 'us-east-1'  # e.g. us-west-1
 service = 'es'
 credentials = boto3.Session().get_credentials()
@@ -85,9 +85,9 @@ def insert_document(entry):
 
 # es.indices.delete(index='restaurants')
 
-# create_index()
-scrap_yelp()
+create_index()
 es.indices.refresh(index='restaurants')
+scrap_yelp()
 
 
 searchsandich={

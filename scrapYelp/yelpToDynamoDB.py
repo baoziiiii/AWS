@@ -12,7 +12,7 @@ dynamodb = boto3.resource('dynamodb')
 # # on the table resource are accessed or its load() method is called.
 table = dynamodb.Table('yelp-restaurants')
 
-api_key = 'w94RBe98SR8FXHwM4bFg2qwBxHWwSmxMVBPMZMDl9-tvMlMzyT01ONb7XJuAzqtCxaPz3YIKRpMDCnRz4YxTOlAjUsu3NYur5uQQnAg0PpA2gDJ2cLJprFBH9X2mXXYx'
+api_key = 'copy_your_yelp_api_here'
 headers = {'Authorization': 'Bearer %s' % api_key}
 
 cities = ['New York','Seattle','Los Angeles','Chicago','San Francisco','Washington', 'Denver', 'Boston',
