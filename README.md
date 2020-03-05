@@ -80,37 +80,37 @@ Store query information(categories and city) to ElasticSearch
 ### Example Chat
 ```
 User 10/16/2019, 11:23:41 PM
-Hi
+Hello
 
 AWS Chatbot 10/16/2019, 11:23:41 PM
-Hi there, if you want to looking for restaurant, say 'restaurant'.
+Hi there, how can I help?
 
 User 10/16/2019, 11:23:45 PM
-restaurant
+I am looking for restaurants.
 
 AWS Chatbot 10/16/2019, 11:23:45 PM
-Great. I can help you with that. What city are you looking to dine in?
+Great. I can help you with that. Where are you looking to dine in? (Please enter full name of city, e.g. New York City)
 
 User 10/16/2019, 11:23:50 PM
-New York
+New York City
 
 AWS Chatbot 10/16/2019, 11:23:51 PM
-Got it. What cuisine would you like to try?(e.g. Chinese/Thai/Sandwich)
+Got it. What cuisine or food would you like to try?(e.g. Chinese/Thai/Pizza)
 
 User 10/16/2019, 11:23:53 PM
-Chinese
+Chinese food.
 
 AWS Chatbot 10/16/2019, 11:23:53 PM
-Then what time?(format: 12:00 p.m.)
+Then what time?(format: 8pm)
 
 User 10/16/2019, 11:23:58 PM
-1:00 p.m.
+8pm
 
 AWS Chatbot 10/16/2019, 11:23:58 PM
-Ok, how many people are in your party?
+OK, how many people are in your party?
 
 User 10/16/2019, 11:24:08 PM
-5
+3
 
 AWS Chatbot 10/16/2019, 11:24:08 PM
 May I have your phone number to which I will send you my findings?(US phone Format:+1xxxxxxxxxx)
@@ -125,19 +125,24 @@ User 10/16/2019, 11:24:18 PM
 example@gmail.com
 
 AWS Chatbot 10/16/2019, 11:24:19 PM
-Okay, please check your information.[Location: New York];[Cuisine: Chinese];[Time: 1:00 p.m.];[Number Of People: 5];[Phone Number: +1123456789];[Email: example@gmail.com]
+Okay, please check your information.
+Location: New York City
+Cuisine: Chinese food
+Time: 8:00 p.m.
+Number Of People: 3
+Phone Number: +1123456789
+Email: example@gmail.com
 
 User 10/16/2019, 11:24:21 PM
 ok
 
 AWS Chatbot 10/16/2019, 11:24:23 PM
-You're all set! If I find suggestions, I will notify your phone or your email! Have a good day!
+You're all set. Thank you for your time. Once your requests be processed, we will immediately notify you of recommendations with Verfication Code [6849]. Have a good day!
 ```
 
 ### Suggestion Text:
 ```
-Your Restaurant Suggestions
-Hello! Here are my Chinese restaurant suggestions for 5 people, for 13:00. 
+Veri-Code:6849. Thanks for waiting! Here are my restaurant suggestions for Chinese food, 3 people, 20:00.
 <1>BaoHaus, located at 238 E 14th St. 
 <2>Wo Hop, located at 17 Mott St. 
 <3>Vanessa's Dumpling House, located at 118A Eldridge St.
